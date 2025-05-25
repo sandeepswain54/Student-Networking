@@ -4,20 +4,20 @@ import 'package:research_job/Services/global_variables.dart';
 
 class Persistent {
   static List<String> jobCategoryList = [
-    "NIT Rourkela",
-    "IIT Bhubaneswar",
-    "KIIT University",
-    "Trident",
-    "Silicon University",
-    "VSSUT Burla",
-    "centurion university",
-    "IIM Sambalpur",
-    "GCE Kalahandi",
-    "IIT Bombay",
-    "LPU",
-    "ITER",
-    "Pragati College",
-    "GCE Kalahandi",
+    "Computer Science",
+    "Information Technology",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Chemical Engineering",
+    "Biomedical Engineering",
+    "Aerospace Engineering",
+    "Data Science",
+    "Artificial Intelligence",
+    "Software Engineering",
+    "MBA",
+    "IoT & Cyber Security",
+    "Automobile Engineering",
     
   ];
 

@@ -22,3 +22,5 @@ class NewsModel {
     this.content,
   });
 }
+
+// 25 May 2025

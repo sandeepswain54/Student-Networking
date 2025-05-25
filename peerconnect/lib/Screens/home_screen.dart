@@ -7,8 +7,6 @@ import 'package:research_job/Widgets/button_nav_bar.dart';
 import 'package:research_job/Widgets/job_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -29,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
-            content: SizedBox(
+            content: Container(
               width: size.width * 0.9,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -196,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                   } else {
                     return const Center(
-                      child: Text("There is no Recruiter"),
+                      child: Text("There is no Student Avail"),
                     );
                   }
                 }
@@ -209,4 +207,4 @@ class _HomeScreenState extends State<HomeScreen> {
               })),
     );
   }
-}
+}// 25 May 2025

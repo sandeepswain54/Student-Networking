@@ -40,7 +40,7 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Flutte News App",
+          "College News",
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -150,4 +150,4 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> {
             ),
     );
   }
-}
+}// 25 May 2025

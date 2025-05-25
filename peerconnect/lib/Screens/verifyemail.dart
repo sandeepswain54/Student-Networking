@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
 class VerifyEmail extends StatefulWidget {
-  const VerifyEmail({super.key});
+  const VerifyEmail({Key? key}) : super(key: key);
 
   @override
   _VerifyEmailState createState() => _VerifyEmailState();
@@ -107,4 +107,4 @@ class _VerifyEmailState extends State<VerifyEmail> {
       ),
     );
   }
-}
+}// 25 May 2025

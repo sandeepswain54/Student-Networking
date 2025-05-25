@@ -222,7 +222,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: TextFieldInpute(
                   textEditingController: locationController,
-                  hintText: "Enter your location",
+                  hintText: "Collage/University",
                   icon: Icons.location_on,
                 ),
               ),
@@ -289,3 +289,4 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 }
+// 25 May 2025

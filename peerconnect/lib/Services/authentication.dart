@@ -66,3 +66,5 @@ class AuthMethod {
     // await _auth.signOut();
   }
 }
+
+// - 25 May 2025

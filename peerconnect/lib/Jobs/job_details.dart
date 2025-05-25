@@ -12,7 +12,7 @@ class JobDetails extends StatefulWidget {
   final String uploadedBy;
   final String jobID;
 
-  const JobDetails({super.key, 
+  const JobDetails({
     required this.uploadedBy,
     required this.jobID,
   });
@@ -260,7 +260,7 @@ class _JobDetailsState extends State<JobDetails> {
                           children: [
                             // Job Description Header
                             Text(
-                              "Job Description",
+                              "Looking to Collaborate On",
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -298,7 +298,7 @@ class _JobDetailsState extends State<JobDetails> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Applicants",
+                                  "No. of Students Applied:",
                                   style: TextStyle(color: Colors.grey),
                                 ),
                                 const SizedBox(
@@ -328,7 +328,7 @@ class _JobDetailsState extends State<JobDetails> {
                                 children: [
                                   dividerWidget(),
                                   Text(
-                                    "Recruitment",
+                                    "Want others to contact you?",
                                     style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
@@ -342,8 +342,8 @@ class _JobDetailsState extends State<JobDetails> {
                                       TextButton(
                                         onPressed: () {
                                           User? user = _auth.currentUser;
-                                          final uid = user!.uid;
-                                          if (uid == widget.uploadedBy) {
+                                          final _uid = user!.uid;
+                                          if (_uid == widget.uploadedBy) {
                                             try {
                                               FirebaseFirestore.instance
                                                   .collection("jobs")
@@ -384,8 +384,8 @@ class _JobDetailsState extends State<JobDetails> {
                                       TextButton(
                                         onPressed: () {
                                           User? user = _auth.currentUser;
-                                          final uid = user!.uid;
-                                          if (uid == widget.uploadedBy) {
+                                          final _uid = user!.uid;
+                                          if (_uid == widget.uploadedBy) {
                                             try {
                                               FirebaseFirestore.instance
                                                   .collection("jobs")
@@ -445,7 +445,7 @@ class _JobDetailsState extends State<JobDetails> {
                           child: Text(
                             isDeadlineAvailable
                                 ? 'Deadline Passed out'
-                                : "Actively Recruiting, Send CV/Resume:",
+                                : "Finish By:",
                             style: TextStyle(
                                 color: isDeadlineAvailable
                                     ? Colors.red
@@ -470,7 +470,7 @@ class _JobDetailsState extends State<JobDetails> {
                             child: Padding(
                               padding: EdgeInsets.symmetric(vertical: 14),
                               child: Text(
-                                "Easy Apply Now",
+                                "Tap to Connect",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -574,7 +574,7 @@ class _JobDetailsState extends State<JobDetails> {
                                                             "Comment cannot be less than 7 characters",
                                                         ctx: context);
                                                   } else {
-                                                    final generatedId =
+                                                    final _generatedId =
                                                         const Uuid().v4();
                                                     await FirebaseFirestore
                                                         .instance
@@ -589,7 +589,7 @@ class _JobDetailsState extends State<JobDetails> {
                                                               .currentUser!
                                                               .uid,
                                                           "commentId":
-                                                              generatedId,
+                                                              _generatedId,
                                                           "name": name,
                                                           "userImageUrl":
                                                               userImage,

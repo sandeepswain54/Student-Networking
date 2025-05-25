@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 class Profile extends StatefulWidget {
   final String userID;
 
-  const Profile({required this.userID, super.key});
+  const Profile({required this.userID, Key? key}) : super(key: key);
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -52,9 +52,9 @@ class _ProfileState extends State<Profile> {
       });
 
       User? user = _auth.currentUser;
-      final uid = user?.uid;
+      final _uid = user?.uid;
       setState(() {
-        _isSameUser = uid == widget.userID;
+        _isSameUser = _uid == widget.userID;
       });
     } catch (error) {
       print('Error fetching user data: $error');
@@ -363,3 +363,4 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
+// 25 May 2025

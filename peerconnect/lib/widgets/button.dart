@@ -6,10 +6,10 @@ class MyButtons extends StatelessWidget {
   final String text;
 
   const MyButtons({
-    super.key,
+    Key? key,
     required this.onTap, // onTap should be required
     required this.text, // text should also be required
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,4 +31,4 @@ class MyButtons extends StatelessWidget {
       ),
     );
   }
-}
+}// 25 May 2025

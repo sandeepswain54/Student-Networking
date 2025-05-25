@@ -6,13 +6,12 @@ import 'package:research_job/HomeScreens/search_company.dart';
 import 'package:research_job/HomeScreens/upload.dart';
 import 'package:research_job/News1/home_screen.dart';
 import 'package:research_job/Screens/home_screen.dart';
- // Import NewsHomeScreen
+import 'package:research_job/HomeScreens/student_directory_page.dart'; // Add this import
 
-// ignore: must_be_immutable
 class ButtonNavBar extends StatelessWidget {
   int indexNum = 0;
 
-  ButtonNavBar({super.key, required this.indexNum});
+  ButtonNavBar({required this.indexNum});
 
   @override
   Widget build(BuildContext context) {
@@ -23,31 +22,12 @@ class ButtonNavBar extends StatelessWidget {
       height: 60,
       index: indexNum,
       items: const [
-        Icon(
-          Icons.list,
-          size: 35,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.search,
-          size: 35,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.add,
-          size: 35,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.person_pin,
-          size: 35,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.article, // Icon for NewsHomeScreen
-          size: 35,
-          color: Colors.black,
-        ),
+        Icon(Icons.list, size: 35, color: Colors.black),
+        Icon(Icons.search, size: 35, color: Colors.black),
+        Icon(Icons.add, size: 35, color: Colors.black),
+        Icon(Icons.person_pin, size: 35, color: Colors.black),
+        Icon(Icons.article, size: 35, color: Colors.black),
+        Icon(Icons.group, size: 35, color: Colors.black), // New tab
       ],
       animationDuration: Duration(milliseconds: 300),
       animationCurve: Curves.bounceInOut,
@@ -62,20 +42,18 @@ class ButtonNavBar extends StatelessWidget {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (_) => Upload()));
         } else if (index == 3) {
-          final FirebaseAuth auth = FirebaseAuth.instance;
-          final User? user = auth.currentUser;
+          final FirebaseAuth _auth = FirebaseAuth.instance;
+          final User? user = _auth.currentUser;
           final String uid = user!.uid;
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (_) => Profile(
-                        userID: uid,
-                      )));
+                  builder: (_) => Profile(userID: uid)));
         } else if (index == 4) {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (_) => NewsHomeScreen()));
-        }
+        } 
       },
     );
   }
-}
+}// 25 May 2025

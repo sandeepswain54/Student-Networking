@@ -4,8 +4,6 @@ import 'package:research_job/Widgets/all_company_widget.dart';
 import 'package:research_job/Widgets/button_nav_bar.dart';
 
 class SearchCompany extends StatefulWidget {
-  const SearchCompany({super.key});
-
   @override
   State<SearchCompany> createState() => _SearchCompanyState();
 }
@@ -144,6 +142,7 @@ class _SearchCompanyState extends State<SearchCompany> {
                         email: snapshot.data!.docs[index]["email"],
                         phone: snapshot.data!.docs[index]["phone"],
                         profileImage: snapshot.data!.docs[index]["profileImage"],
+                        
                       ),
                     );
                   },
@@ -176,4 +175,4 @@ class _SearchCompanyState extends State<SearchCompany> {
       ),
     );
   }
-}
+}// 25 May 2025

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:research_job/HomeScreens/profile.dart';
-import 'package:url_launcher/url_launcher.dart'; // Ensure to import url_launcher correctly
+import 'package:url_launcher/url_launcher.dart';
 
 class AllCompanyWidget extends StatefulWidget {
   final String createdAt;
@@ -9,12 +9,14 @@ class AllCompanyWidget extends StatefulWidget {
   final String phone;
   final String profileImage;
 
-  const AllCompanyWidget({super.key, 
+
+  AllCompanyWidget({
     required this.createdAt,
     required this.name,
     required this.email,
     required this.phone,
     required this.profileImage,
+    
   });
 
   @override
@@ -22,18 +24,15 @@ class AllCompanyWidget extends StatefulWidget {
 }
 
 class _AllCompanyWidgetState extends State<AllCompanyWidget> {
-
-  // Function to handle email launching
   void _mainTo() async {
-    var mailUrl = "mailto:${widget.email}";  // Construct mailto URL
-    print("Trying to launch mailto URL: $mailUrl");  // Debug print for the mailto URL
+    var mailUrl = "mailto:${widget.email}";
+    print("Trying to launch mailto URL: $mailUrl");
     
-    // Check if the mail URL can be launched
     if (await canLaunch(mailUrl)) {
-      print("Launching email client...");  // Debug print if the URL can be launched
-      await launch(mailUrl);  // Launch the mail app
+      print("Launching email client...");
+      await launch(mailUrl);
     } else {
-      print("Could not launch email client.");  // Debug print if the URL cannot be launched
+      print("Could not launch email client.");
       throw "Error Occurred: Cannot launch mail client.";
     }
   }
@@ -73,9 +72,9 @@ class _AllCompanyWidgetState extends State<AllCompanyWidget> {
           widget.name,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.white // Use the provided textColor
           ),
         ),
         subtitle: Column(
@@ -89,7 +88,7 @@ class _AllCompanyWidgetState extends State<AllCompanyWidget> {
         ),
         trailing: IconButton(
           onPressed: () {
-            _mainTo();  // Call the method to launch the email client
+            _mainTo();
           },
           icon: Icon(
             Icons.mail_outline,
@@ -100,4 +99,4 @@ class _AllCompanyWidgetState extends State<AllCompanyWidget> {
       ),
     );
   }
-}
+}// 25 May 2025

@@ -9,15 +9,13 @@ import 'package:research_job/Widgets/button_nav_bar.dart';
 import 'package:uuid/uuid.dart';
 
 class Upload extends StatefulWidget {
-  const Upload({super.key});
-
   @override
   State<Upload> createState() => _UploadState();
 }
 
 class _UploadState extends State<Upload> {
   final TextEditingController _jobCategoryController =
-      TextEditingController(text: "Choose your college/University");
+      TextEditingController(text: "Choose your Branch");
 
   final TextEditingController _jobtitleController = TextEditingController();
 
@@ -25,7 +23,7 @@ class _UploadState extends State<Upload> {
       TextEditingController();
 
   final TextEditingController _jobDeadlineController =
-      TextEditingController(text: "Project Deadline Date");
+      TextEditingController(text: "Open to Connect Till");
 
   final _formkey = GlobalKey<FormState>();
   DateTime? picked;
@@ -107,7 +105,7 @@ class _UploadState extends State<Upload> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
-            content: SizedBox(
+            content: Container(
               width: size.width * 0.9,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -178,7 +176,7 @@ class _UploadState extends State<Upload> {
   void _uploadTask() async {
     final jobId = const Uuid().v4();
     User? user = FirebaseAuth.instance.currentUser;
-    final uid = user!.uid;
+    final _uid = user!.uid;
     final isValid = _formkey.currentState!.validate();
 
     if (isValid) {
@@ -194,7 +192,7 @@ class _UploadState extends State<Upload> {
       try {
         await FirebaseFirestore.instance.collection("jobs").doc(jobId).set({
           "jobId": jobId,
-          "uploadedBy": uid,
+          "uploadedBy": _uid,
           "email": user.email,
           "jobTitle": _jobtitleController.text,
           "jobDescription": _jobDescriptionController.text,
@@ -273,11 +271,11 @@ class _UploadState extends State<Upload> {
                       child: Padding(
                         padding: const EdgeInsets.all(8),
                         child: Text(
-                          "Please fill all Fields",
+                          "Let Others Know You \nFill Your Student Card",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 35,
+                            fontSize: 30,
                             fontStyle: FontStyle.italic,
                           ),
                         ),
@@ -294,7 +292,7 @@ class _UploadState extends State<Upload> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _textTitles(label: "Student Preferences"),
+                            _textTitles(label: "Department"),
                             _textFormFields(
                               valueKey: 'StudentPreferences',
                               controller: _jobCategoryController,
@@ -304,21 +302,21 @@ class _UploadState extends State<Upload> {
                               },
                               maxLength: 50,
                             ),
-                            _textTitles(label: "Project Title:"),
+                            _textTitles(label: "Skills and Interests:"),
                             _textFormFields(
                                 valueKey: "ProjectTitle",
                                 controller: _jobtitleController,
                                 enabled: true,
                                 fct: () {},
                                 maxLength: 50),
-                            _textTitles(label: "Project Description:"),
+                            _textTitles(label: "Looking to Collaborate On:"),
                             _textFormFields(
                                 valueKey: "JobDescription",
                                 controller: _jobDescriptionController,
                                 enabled: true,
                                 fct: () {},
                                 maxLength: 100),
-                            _textTitles(label: "Project Deadline Date:"),
+                            _textTitles(label: "Connect with Me Before:"),
                             _textFormFields(
                               valueKey: "JobDeadline",
                               controller: _jobDeadlineController,

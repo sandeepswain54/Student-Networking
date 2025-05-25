@@ -41,7 +41,7 @@ class SplashScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 // Animated text
                 const Text(
-                  'Welcome to 10arm',
+                  'Welcome to PeerConnect',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

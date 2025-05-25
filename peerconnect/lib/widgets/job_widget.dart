@@ -16,7 +16,7 @@ class JobWidget extends StatefulWidget {
   final String email;
   final String location;
 
-  const JobWidget({super.key, 
+  const JobWidget({
     required this.jobTitle,
     required this.jobDescription,
     required this.jobId,
@@ -37,7 +37,7 @@ class _JobWidgetState extends State<JobWidget> {
 
   _deleteDialog() {
     User? user = _auth.currentUser;
-    final uid = user!.uid;
+    final _uid = user!.uid;
     showDialog(
       context: context,
       builder: (ctx) {
@@ -46,7 +46,7 @@ class _JobWidgetState extends State<JobWidget> {
             TextButton(
               onPressed: () async {
                 try {
-                  if (widget.uploadedBy == uid) {
+                  if (widget.uploadedBy == _uid) {
                     await FirebaseFirestore.instance
                         .collection("jobs")
                         .doc(widget.jobId)
@@ -156,4 +156,4 @@ class _JobWidgetState extends State<JobWidget> {
       ),
     );
   }
-}
+}// 25 May 2025
