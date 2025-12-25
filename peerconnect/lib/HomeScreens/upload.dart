@@ -2,9 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:research_job/Connection_Campus/global_methods.dart';
+import 'package:research_job/Connection_Campus/global_variables.dart';
 import 'package:research_job/Persistent/persistent.dart';
-import 'package:research_job/Services/global_methods.dart';
-import 'package:research_job/Services/global_variables.dart';
+
 import 'package:research_job/Widgets/button_nav_bar.dart';
 import 'package:uuid/uuid.dart';
 

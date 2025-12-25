@@ -1,10 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:research_job/Collage_News/home_screen.dart';
 import 'package:research_job/HomeScreens/profile.dart';
 import 'package:research_job/HomeScreens/search_company.dart';
 import 'package:research_job/HomeScreens/upload.dart';
-import 'package:research_job/News1/home_screen.dart';
+
 import 'package:research_job/Screens/home_screen.dart';
 import 'package:research_job/HomeScreens/student_directory_page.dart'; // Add this import
 
