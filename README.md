@@ -1,5 +1,3 @@
-![PeerConnect](assets/uo.png)
-
 # PeerConnect
 
 PeerConnect is a Flutter & Dart-powered networking platform designed for students, mentors, and faculty to connect, collaborate, and grow.
