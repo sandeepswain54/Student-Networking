@@ -1,4 +1,4 @@
-![PeerConnect](uo.png)
+![PeerConnect](assets/uo.png)
 
 # PeerConnect
 
